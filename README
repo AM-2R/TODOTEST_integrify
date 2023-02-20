@@ -1,0 +1,89 @@
+TODO Application Backend
+This is the backend for a personal TODO application, built using C# and the .NET Framework. The backend exposes a set of REST APIs for managing TODO items, and requires users to be logged in before they can call the APIs.
+
+Getting Started
+To get started with the project, follow these steps:
+
+Clone the project from the GitHub repository.
+
+Open the project in Visual Studio.
+
+Restore the NuGet packages by right-clicking on the project in Solution Explorer, and selecting "Restore NuGet Packages".
+
+Set the project as the startup project by right-clicking on the project in Solution Explorer, and selecting "Set as Startup Project".
+
+Open the appsettings.json file, and modify the ConnectionStrings section to point to your own database server.
+
+In the Package Manager Console, run the following command to apply the database migrations: Update-Database.
+
+Start the project by pressing the "Start" button in Visual Studio, or by pressing F5.
+
+Open a web browser or a tool like Postman, and navigate to http://localhost:5000/swagger to access the Swagger UI for the API.
+
+Usage
+The backend exposes the following set of REST APIs:
+
+POST /api/v1/signup: Sign up as a user of the system, using email & password.
+POST /api/v1/signin: Sign in using email & password. The system will return a JWT token that can be used to call the APIs that follow.
+PUT /api/v1/changePassword: Change user’s password.
+GET /api/v1/todos?status=[status]: Get a list of TODO items. Optionally, a status query param can be included to return only items of specific status. If not present, return all items.
+POST /api/v1/todos: Create a new TODO item.
+PUT /api/v1/todos/:id: Update a TODO item.
+DELETE /api/v1/todos/:id: Delete a TODO item.
+To use the API, you can make requests to the endpoints using a tool like Postman, or use the Swagger UI to test the endpoints.
+
+Code Structure
+The code is structured into three main layers:
+
+Controllers: Define the endpoints and handle incoming requests.
+Services: Implement the business logic and orchestrate interactions between the controllers and the repositories.
+Repositories: Handle interactions with the database.
+Dependency injection is used throughout the project to facilitate loose coupling and allow for easy testing.
+
+Technologies Used
+The project is built using the following technologies:
+
+C#
+.NET Framework
+Entity Framework Core
+Microsoft SQL Server
+
+
+Code Structure
+The code structure is divided into three main layers:
+
+Controllers: Handles incoming HTTP requests and interacts with the services layer to retrieve and manipulate data.
+Services: Implements the business logic and interacts with the repositories to perform CRUD operations on the data.
+Repositories: Interacts with the database to retrieve and manipulate data.
+
+- Controllers
+  - AuthController.cs
+  - TodosController.cs
+- Services
+  - AuthService.cs
+  - TodoService.cs
+- Repositories
+  - IAuthRepository.cs
+  - ITodoRepository.cs
+  - AuthRepository.cs
+  - TodoRepository.cs
+- Models
+  - Todo.cs
+  - User.cs
+- Utilities
+  - JwtToken.cs
+- Startup.cs
+- appsettings.json
+- Program.cs
+
+
+Thank you !
+
+This project was an opportunity for me to learn C# and develop a personal TODO application using the .NET framework. 
+Although it may not be perfect, I'm satisfied with the logic and structure of the project. As a beginner in C#, 
+I recognize the need to continue learning and improving my skills in this language. I chose C# over Node.js because 
+I believe it will provide me with better opportunities, especially in the gaming industry where C# is widely used for 
+developing games with the Unity engine. Moving forward, I plan to focus on improving my understanding of object-oriented 
+programming concepts, which are fundamental to C# knowing that I already studied this subject in university using JAVA.
+I'm grateful for the available online resources, including official Microsoft documentation and online communities,
+which can aid me in my learning journey.
